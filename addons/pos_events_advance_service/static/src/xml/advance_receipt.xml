@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-name="pos_events_advance_service.AdvanceReceipt">
+    <div class="pos-receipt">
+      <h2>Event Advance Receipt</h2>
+      <t t-call="point_of_sale.ReceiptHeader"/>
+
+      <div style="margin-top:6px; font-weight:bold;">
+        Receipt No: <t t-esc="receipt.name"/>
+      </div>
+      <t t-if="receipt._customer_mobile">
+        <div>Customer Mobile: <t t-esc="receipt._customer_mobile"/></div>
+      </t>
+      <t t-if="receipt._customer_name">
+        <div>Customer: <t t-esc="receipt._customer_name"/></div>
+      </t>
+
+      <t t-if="receipt._event_qr_value">
+        <div style="margin-top:10px; text-align:center;">
+          <div style="font-weight:bold;">Scan to open event in POS</div>
+          <img t-att-src="'/report/barcode/?type=QR&amp;value=' + receipt._event_qr_value + '&amp;width=220&amp;height=220'"/>
+          <div style="margin-top:6px;">Event Code: <t t-esc="receipt._event_qr_value"/></div>
+        </div>
+      </t>
+
+      <div style="margin:8px 0; font-weight:bold;">
+        Advance Payment (Not a Sale)
+      </div>
+
+      <t t-call="point_of_sale.Orderlines">
+        <t t-set="orderlines" t-value="receipt.orderlines"/>
+      </t>
+      <t t-call="point_of_sale.ReceiptTotals"/>
+    </div>
+  </t>
+</templates>
