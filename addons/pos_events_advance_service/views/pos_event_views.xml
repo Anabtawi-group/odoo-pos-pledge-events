@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_pos_event_order_tree" model="ir.ui.view">
+    <field name="name">pos.event.order.tree</field>
+    <field name="model">pos.event.order</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name"/>
+        <field name="partner_id"/>
+        <field name="due_datetime"/>
+        <field name="delivery_mode"/>
+        <field name="service_persons_count"/>
+        <field name="advance_amount"/>
+        <field name="state"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_pos_event_order_form" model="ir.ui.view">
+    <field name="name">pos.event.order.form</field>
+    <field name="model">pos.event.order</field>
+    <field name="arch" type="xml">
+      <form>
+        <sheet>
+          <group>
+            <field name="name"/>
+            <field name="state"/>
+            <field name="pos_config_id"/>
+            <field name="partner_id"/>
+            <field name="due_datetime"/>
+            <field name="delivery_mode"/>
+            <field name="advance_amount"/>
+          </group>
+          <group string="Service / Plates">
+            <field name="service_persons_count"/>
+            <field name="service_leader_employee_id"/>
+            <field name="plates_qty"/>
+            <field name="plates_value"/>
+            <field name="employee_liability_move_id" readonly="1"/>
+            <field name="employee_liability_cleared" readonly="1"/>
+          </group>
+          <footer>
+            <button string="Clear Employee Plates" type="object" name="action_clear_employee_liability"/>
+          </footer>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_pos_event_orders" model="ir.actions.act_window">
+    <field name="name">Event Orders</field>
+    <field name="res_model">pos.event.order</field>
+    <field name="view_mode">tree,form</field>
+  </record>
+</odoo>
