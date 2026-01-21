@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+  <t t-inherit="point_of_sale.ControlButtons" t-inherit-mode="extension">
+    <xpath expr="//div[contains(@class,'control-buttons')]" position="inside">
+
+      <button class="control-button" t-on-click="onClickCreateEvent">
+        <i class="fa fa-calendar" role="img"/>
+        <span>Create Event</span>
+      </button>
+
+      <button class="control-button" t-on-click="onClickTakeAdvance">
+        <i class="fa fa-money" role="img"/>
+        <span>Take Advance</span>
+      </button>
+
+      <button class="control-button" t-on-click="onClickCompleteEvent">
+        <i class="fa fa-check" role="img"/>
+        <span>Complete Event</span>
+      </button>
+
+      <button class="control-button" t-on-click="onClickReturnPlates">
+        <i class="fa fa-undo" role="img"/>
+        <span>Return Plates</span>
+      </button>
+
+    </xpath>
+  </t>
+</templates>
