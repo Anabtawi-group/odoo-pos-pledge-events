@@ -12,6 +12,7 @@
             <field name="advance_product_id" options="{'no_create': True}"/>
             <field name="service_fee_product_id" options="{'no_create': True}"/>
           </group>
+
           <group string="Employee Plates Accounting">
             <field name="employee_plate_receivable_account_id" options="{'no_create': True}"/>
             <field name="plates_clearing_account_id" options="{'no_create': True}"/>
