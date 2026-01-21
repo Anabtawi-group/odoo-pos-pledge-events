@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <menuitem id="menu_pos_event_root" name="POS Events" parent="point_of_sale.menu_point_root" sequence="95"/>
+  <menuitem id="menu_pos_event_orders" name="Event Orders" parent="menu_pos_event_root" action="action_pos_event_orders"/>
+</odoo>
