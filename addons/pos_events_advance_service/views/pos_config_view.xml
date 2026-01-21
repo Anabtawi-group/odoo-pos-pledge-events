@@ -5,6 +5,7 @@
     <field name="model">pos.config</field>
     <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
     <field name="arch" type="xml">
+      <!-- Odoo 19 safe xpath: insert a new page in the notebook -->
       <xpath expr="//form/sheet/notebook" position="inside">
         <page string="Events">
           <group>
