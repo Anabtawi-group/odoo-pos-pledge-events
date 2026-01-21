@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="seq_pos_event_order" model="ir.sequence">
+    <field name="name">POS Event Order</field>
+    <field name="code">pos.event.order</field>
+    <field name="prefix">EVT/</field>
+    <field name="padding">6</field>
+  </record>
+</odoo>
